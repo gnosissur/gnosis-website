@@ -1,0 +1,179 @@
+@import "~normalize.css"
+
+@font-face
+  font-family: 'Gotham-Medium'
+  src: url('/assets/fonts/Gotham-Medium.eot')
+  src: local('☺'),
+        url('/assets/fonts/Gotham-Medium.woff2') format('woff2'),
+        url('/assets/fonts/Gotham-Medium.woff') format('woff'),
+        url('/assets/fonts/Gotham-Medium.ttf') format('truetype')
+
+@font-face
+  font-family: 'Exchange SSm 4r';
+  src: url('/assets/fonts/Exchange.eot');
+  src: local('☺'),
+        url('/assets/fonts/Exchange.woff2') format('woff2'),
+        url('/assets/fonts/Exchange.woff') format('woff'),
+        url('/assets/fonts/Exchange.ttf') format('truetype')
+
+html
+    box-sizing: border-box
+
+*, *:before, *:after
+    box-sizing: inherit
+
+main
+    font-size: 100%
+    width: 100%
+    overflow-x: hidden
+    font-family: 'Exchange SSm 4r', Georgia, serif
+    font-size: 1.375em
+    font-style: normal
+    font-weight: normal
+    line-height: 1.6em
+
+h1, h2, h3, h4, h5, h6
+    white-space: pre
+    font-family: 'Gotham-Medium', sans-serifc
+    font-weight: 600
+    text-transform: uppercase
+    text-align: center
+    color: inherit
+    position: relative
+    line-height: 1
+    margin: 0.3em
+    margin-bottom: 0.5em
+
+h1
+    font-size: 6em
+h2
+    font-size: 5.25em
+h3
+    font-size: 2.5em
+h4
+    font-size: 1.875em
+h5
+    font-size: 1.25em
+h6
+    font-size: 0.9375em
+
+h1:before
+    content: ''
+    position: absolute
+    width: 1em
+    height: 2px
+    background-color: black
+    left: 50%
+    margin-left: -0.5em
+    bottom: -0.25em
+
+header, section, footer, figure, blockquote
+    margin: 0
+    width: 100%
+    min-height: 100vh
+    padding: 0 20%
+    position: relative
+
+header
+    padding: 0 10%
+    cursor: pointer
+
+header, footer
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-align: center
+
+header span
+    font-style: italic
+
+header > h1, blockquote > p
+    color: black
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-size: contain
+    background-position: center
+    background-image: url(/assets/bg.jpg)
+
+section
+    min-height: auto
+    padding-top: 8em
+    padding-bottom: 9em
+
+section:first-of-type
+    padding-top: 4em
+
+section > p
+    margin-bottom: 1.875em
+    color: inherit
+    text-align: justify
+
+section > *:first-child
+    margin: 0
+    margin-bottom: 1.25em
+    text-align: inherit
+
+section:nth-of-type(even)
+    text-align: right
+section:nth-of-type(odd)
+    text-align: left
+
+img
+    width: 100%
+
+blockquote
+    min-height: auto
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 0 10%
+    p
+        font-family: 'Gotham-Medium', sans-serifc
+        font-weight: 600
+        text-transform: uppercase
+        text-align: center
+        line-height: 1
+        font-size: 4em
+        margin-top: 0
+        margin-bottom: 0.5em
+    span
+        text-align: center
+        font-style: italic
+
+footer > div
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+footer h2, footer h3
+    margin: 0
+
+footer h2
+    line-height: 6.05rem
+
+footer h4
+    line-height: 2.675rem
+    margin: 0
+    text-align: left
+
+footer > div > div:first-of-type
+    padding-right: 2em
+
+footer > div > div:last-of-type
+    padding-left: 2em
+    border-left: 2px solid
+    text-align: left
+
+footer > div > div > p
+    margin: 0
+
+footer > div > div > p:first-of-type
+    margin-top: 1em
+
+footer a
+    color: black
+    text-decoration: none
+
+figure
+    min-height: 100vh
+    padding: 0
