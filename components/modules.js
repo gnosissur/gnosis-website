@@ -16,12 +16,12 @@ export class Page extends React.Component {
     render () {
         let result = [], block;
         for (let item of React.Children.toArray(this.props.children)) {
-            if (block && item.type.name === "Section" || item.type.name === "Footer") {
+            if (block && item.type === Section || item.type === Footer) {
                 result.push(<Element key={block.key} name={block.to}>{block.array}</Element>);
                 block = undefined;
             }
 
-            if (!block && item.type.name === "Section")
+            if (!block && item.type === Section)
                 block = { key: item.key, to: item.props.title, array: [] };
 
             (block ? block.array : result).push(item);
