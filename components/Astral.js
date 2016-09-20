@@ -1,8 +1,16 @@
 import React from 'react';
-import { Page, Header, Section, Quote, Figure, Footer } from './modules';
+import { Page, Nav, NavLink, Header, Section, Quote, Figure, Footer } from './modules';
 
 export default () => (
     <Page>
+
+        <Nav>
+            <NavLink name="Home" to="Header" />
+            <NavLink to="Einleitung" />
+            <NavLink to="Vertiefung" />
+            <NavLink to="Resumen" />
+            <NavLink name="Wann/Wo" to="Footer" />
+        </Nav>
 
         <Header title={"Wunder\nder Nacht"}>
             Wie der Traum zum Mittel der <br/>
@@ -19,7 +27,7 @@ export default () => (
         <Figure
             url="http://67.media.tumblr.com/7c43f14dd42f730cbdbb1ef17b85d484/tumblr_o9no1rhqnj1r3fkjno1_1280.jpg" />
 
-        <Section title="Einleitung">
+        <Section title="Vertiefung">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </Section>
 
@@ -27,7 +35,7 @@ export default () => (
             During the daytime, you should train in regarding your perceptions as being dreams.
         </Quote>
 
-        <Section title="Einleitung">
+        <Section title="Resumen">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

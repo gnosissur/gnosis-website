@@ -1,30 +1,69 @@
 import React from 'react';
-import { Link, Element } from 'react-scroll';
+import { Link, Element, scrollSpy } from 'react-scroll';
 import style from './modules.styl';
 
-export const Page = ({ children }) => {
+export class Page extends React.Component {
+    listen = () => scrollSpy.update();
 
-    let array = React.Children.toArray(children);
-    let content = [
-        array.slice(0, 1),
-        <Element key="link" name="content" />,
-        ...array.slice(1)
-    ];
+    componentDidMount() {
+        window.addEventListener("resize", this.listen);
+    }
 
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.listen);
+    }
+
+    render () {
+        let result = [], block;
+        for (let item of React.Children.toArray(this.props.children)) {
+            if (block && item.type.name === "Section" || item.type.name === "Footer") {
+                result.push(<Element key={block.key} name={block.to}>{block.array}</Element>);
+                block = undefined;
+            }
+
+            if (!block && item.type.name === "Section")
+                block = { key: item.key, to: item.props.title, array: [] };
+
+            (block ? block.array : result).push(item);
+        }
+
+        return (
+            <main>
+                {result}
+            </main>
+        )
+    }
+}
+
+export const Nav = ({ children }) => {
+    let count = 0;
     return (
-        <main>
-            {content}
-        </main>
+        <nav>
+            <ul>
+                {children.map(item => <li key={count++}>{item}</li>)}
+            </ul>
+        </nav>
     )
 }
 
-export const Header = ({ title, children }) => (
-    <Link to="content" smooth={true}>
-    <header>
-        <h1>{title}</h1>
-        <span>{children}</span>
-    </header>
+export const NavLink = ({ name, to }) => (
+    <Link activeClass="active" to={to} smooth={true} spy={true}>
+        { name || to }
     </Link>
+)
+
+export const Header = ({ title, children }) => (
+    <div>
+        <Link to="__below-header" smooth={true}>
+            <Element name="Header">
+                <header>
+                    <h1>{title}</h1>
+                    <span>{children}</span>
+                </header>
+            </Element>
+        </Link>
+        <Element key="reference" name="__below-header" />
+    </div>
 )
 
 export const Quote = ({ author, children }) => (
@@ -49,16 +88,18 @@ export const Figure = ({ url, position, size }) => (
 )
 
 export const Footer = ({ day, month, title, children}) => (
-    <footer>
-        <div>
+    <Element name="Footer">
+        <footer>
             <div>
-                <h2>{day}</h2>
-                <h3>{month}</h3>
+                <div>
+                    <h2>{day}</h2>
+                    <h3>{month}</h3>
+                </div>
+                <div>
+                    <h4>{title}</h4>
+                    {children}
+                </div>
             </div>
-            <div>
-                <h4>{title}</h4>
-                {children}
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </Element>
 )

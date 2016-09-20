@@ -175,5 +175,31 @@ footer a
     text-decoration: none
 
 figure
-    min-height: 100vh
+    min-height: 80vh
     padding: 0
+
+nav
+    position: fixed
+    margin: 2em
+    z-index: 1
+    right: 0
+    font-family: 'Gotham-Medium', sans-serifc
+    text-transform: uppercase
+    font-size: 0.9rem
+    line-height: 0.9rem
+
+nav ul
+    padding: 1em
+    margin: 0
+    list-style: none
+
+nav li
+    text-align: right
+    cursor: pointer
+    color: #dfdfdf
+
+nav .active, nav li a:hover
+    background-color: #f7bb36
+    color: white
+
+p::selection, span::selection, div::selection, h1::selection, h2::selection, h3::selection, h4::selection, blockquote::selection, pre::selection, a::selection { background: #f7bb36; color: white; }
