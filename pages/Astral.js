@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Nav, NavLink, Header, Section, Quote, Figure, Footer } from './modules';
+import { Page, Nav, NavLink, Header, Section, Figure, Quote, Footer } from '../components';
 
 export default () => (
     <Page>

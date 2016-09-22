@@ -11,7 +11,6 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.styl/, loader: "style-loader!css-loader!autoprefixer-loader!stylus-loader" },
             { test: /.jsx?$/, exclude: /node_modules/, loaders: (production ? [] : [ 'react-hot' ]).concat([ 'babel']) }
         ]
     },
