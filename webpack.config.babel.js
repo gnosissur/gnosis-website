@@ -17,8 +17,9 @@ module.exports = {
     resolve: {
         alias: production ? {
             'react': 'react-lite',
-            'react-dom': 'react-lite'
-        } : {}
+            'react-dom': 'react-lite',
+            'react-csjs': '../react-csjs/src'
+        } : { }
     },
     plugins: (production ? [
         new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': JSON.stringify('production') } }),

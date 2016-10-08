@@ -14,7 +14,7 @@ const styles = csjs`
         margin: 0;
         width: 100%;
         padding: 0 20%;
-        position: relative;        
+        position: relative;
         min-height: auto;
         padding-top: 8em;
         padding-bottom: 8em;

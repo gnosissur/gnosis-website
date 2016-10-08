@@ -20,7 +20,7 @@ const Footer = ({ day, month, title, children, classes }) => (
     </Element>
 )
 
-var styles = csjs`
+const styles = csjs`
     .footer {
         display: flex;
         flex-direction: column;
