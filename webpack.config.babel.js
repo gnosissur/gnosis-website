@@ -1,32 +1,26 @@
-import webpack from 'webpack';
+let webpack = require('webpack');
 
-const production = process.env.NODE_ENV === 'production';
-
-module.exports = {
+module.exports = env => ({
     entry: "./index.js",
     output: {
+        filename: './build/bundle.js',
         publicPath: '/',
         path: __dirname,
-        filename: './build/bundle.js',
     },
     module: {
         loaders: [
-            { test: /.jsx?$/, exclude: /node_modules/, loaders: (production ? [] : [ 'react-hot' ]).concat([ 'babel']) }
+            { test: /.jsx?$/, exclude: /node_modules/, loaders: ['babel'] }
         ]
     },
     resolve: {
-        alias: production ? {
+        alias: env.prod && {
             'react': 'react-lite',
             'react-dom': 'react-lite',
-            'react-csjs': '../react-csjs/src'
-        } : { }
+        }
     },
-    plugins: (production ? [
+    plugins: env.prod && [
         new webpack.DefinePlugin({ 'process.env': { 'NODE_ENV': JSON.stringify('production') } }),
-        new webpack.optimize.OccurrenceOrderPlugin(true),
-        new webpack.optimize.DedupePlugin(),
+        new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
         new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }, mangle: true }),
-    ] : []),
-    cache: true,
-    debug: false
-};
+    ]
+});

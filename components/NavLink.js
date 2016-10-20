@@ -1,19 +1,18 @@
 import React from 'react';
-import csjs from 'csjs';
-import withStyles from 'react-csjs';
+import csjs from 'react-csjs';
 import { Link } from 'react-scroll';
 
-const NavLink = ({ name, to, classes }) => (
-    <Link activeClass={classes.active.className} to={to} smooth={true} spy={true}>
-        { name || to }
-    </Link>
-)
-
-var styles = csjs`
-    .active {
-        background-color: #dfdfdf;
-        color: white;
+@csjs`
+.active {
+    color: #cfcfcf;
+}`
+export default class NavLink extends React.Component {
+    render() {
+        let { classes, to, name } = this.props;
+        return (
+            <Link activeClass={classes.active.className} to={to} smooth={true} spy={true}>
+            { name || to }
+            </Link>
+        )
     }
-`;
-
-export default withStyles(styles)(NavLink);
+}
