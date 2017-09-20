@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Astral from './pages/Astral';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Page from './pages/Page'
 
-ReactDOM.render(<Astral />, document.getElementById('app'));
+ReactDOM.render(<Page />, document.getElementById('app'))
