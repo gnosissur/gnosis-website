@@ -8,5 +8,6 @@ import Figure from '../components/Figure'
 import Quote from '../components/Quote'
 import Footer from '../components/Footer'
 import Grid from '../components/Grid'
-import GridItem from '../components/GridItem';
-export { Content, Grid, GridItem, Block, Nav, NavLink, Header, Section, Figure, Quote, Footer }
+import GridItem from '../components/GridItem'
+import Lightbox from '../components/Lightbox'
+export { Content, Grid, GridItem, Lightbox, Block, Nav, NavLink, Header, Section, Figure, Quote, Footer }
