@@ -229,7 +229,7 @@ body {
     & blockquote::selection,
     & pre::selection,
     & a::selection {
-        background: #f7bb36;
+        background: var(--colorAccent);
         color: white;
     }
 
@@ -382,7 +382,7 @@ body {
         margin-top: 1em;
     }
     & a {
-        color: black;
+        color: var(--colorAccent);
         text-decoration: none;
     }
 }

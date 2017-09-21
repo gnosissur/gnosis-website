@@ -2,6 +2,14 @@ const webpack = require('webpack')
 const postcss = require('postcss-cssnext')
 const WebpackNotifierPlugin = require('webpack-notifier')
 
+const imageCompression = {
+    bypassOnDebug: false,
+    mozjpeg: { progressive: true, quality: 60 },
+    gifsicle: { interlaced: false },
+    optipng: { optimizationLevel: 7 },
+    pngquant: { quality: '50-75', speed: 4 },
+}
+
 module.exports = env => ({
     entry: './index.js',
     output: {
@@ -35,6 +43,13 @@ module.exports = env => ({
                     },
                 ],
             },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/,
+                use: [
+                    'file-loader?hash=sha512&digest=hex&name=build/assets/[hash].[ext]',
+                    { loader: 'image-webpack-loader', query: imageCompression },
+                ],
+            },
         ],
     },
     resolve: {
@@ -49,6 +64,7 @@ module.exports = env => ({
             new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
             new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
             new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }, mangle: true }),
-        ]) || []),
+        ]) ||
+            []),
     ],
 })

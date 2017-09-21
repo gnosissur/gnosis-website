@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class StackedGrid extends React.Component {
     static propTypes = {
-        occupySpace: React.PropTypes.bool,
-        columns: React.PropTypes.number,
-        margin: React.PropTypes.number,
+        occupySpace: PropTypes.bool,
+        columns: PropTypes.number,
+        margin: PropTypes.number,
     }
     static defaultProps = {
         occupySpace: true,
