@@ -107,7 +107,7 @@ export default [
     },
 
     {
-        title: 'Reinkarnation\nRückkehr\nPeriodizität',
+        title: 'Reinkarnation\nRückkehr\nRekurrenz',
         content: 'Der Zyklus von Geburt, Tod und Wiedergeburt.',
         image: require('../assets/angels.jpg'),
         height: 600,

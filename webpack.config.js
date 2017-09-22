@@ -3,7 +3,7 @@ const postcss = require('postcss-cssnext')
 const WebpackNotifierPlugin = require('webpack-notifier')
 
 const imageCompression = {
-    bypassOnDebug: false,
+    bypassOnDebug: true,
     mozjpeg: { progressive: true, quality: 60 },
     gifsicle: { interlaced: false },
     optipng: { optimizationLevel: 7 },

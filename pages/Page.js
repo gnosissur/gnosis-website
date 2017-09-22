@@ -127,7 +127,7 @@ export default class extends React.Component {
                     <p>Es werden unter anderem folgende Themen behandelt:</p>
                 </Section>
 
-                <Grid data={data} control={GridItem} onItemClicked={this.onItemClicked} />
+                <Grid data={data} component={GridItem} onItemClicked={this.onItemClicked} />
 
                 <Footer title={'Infos und\nKontaktdaten'}>
                     <p>Für weitere Informationen oder Fragen</p>
