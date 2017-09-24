@@ -18,7 +18,7 @@ export default class Lightbox extends React.Component {
                     opacity: spring(active ? 1 : 0),
                 }}>
                 {({ opacity }) => (
-                    <section
+                    <div
                         className={lightbox}
                         onClick={this.toggle}
                         style={{
@@ -55,7 +55,7 @@ export default class Lightbox extends React.Component {
                                 )}
                             </Motion>
                         )}
-                    </section>
+                    </div>
                 )}
             </Motion>
         )

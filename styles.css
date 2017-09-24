@@ -45,11 +45,6 @@ body {
         overflow: hidden;
     }
 }
-@media (max-device-width: 1224px) {
-    .grid {
-        padding: 0 5%;
-    }
-}
 
 .gridItem {
     cursor: pointer;
@@ -139,7 +134,7 @@ body {
     }
 }
 
-@media (max-device-width: 1224px) {
+@media (max-width: 1224px) {
     .lightbox > div {
         width: 95%;
         padding: 20px 0;
@@ -155,7 +150,7 @@ body {
         }
     }
 }
-@media (max-device-width: 1224px) and (orientation: portrait) {
+@media (max-width: 1224px) and (orientation: portrait) {
     .lightbox > div {
         flex-direction: column;
         & > div {
@@ -317,6 +312,10 @@ body {
     }
 }
 
+@media (max-width: 1224px) {
+    .section { padding-left: 10%; padding-right: 10%; }
+}
+
 .active {
     color: var(--colorAccent);
 }
@@ -346,6 +345,10 @@ body {
     padding: 0 20%;
     position: relative;
     background-color: #292929;
+    background-size: cover;
+    background-position: top;
+    background-image: url(/assets/stars2.jpg);
+
     color: white;
     & > div {
         display: flex;
@@ -399,11 +402,8 @@ body {
     text-transform: uppercase;
     font-size: 0.9rem;
     line-height: 0.9rem;
-    & ul {
-        padding: 1em;
-        margin: 0;
-        list-style: none;
-    }
+    padding: 1em;
+    list-style: none;
     & li {
         text-align: right;
         cursor: pointer;

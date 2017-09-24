@@ -12,12 +12,12 @@ const title = {
     fontFamily: '"Gotham-Medium", sans-serif',
     textTransform: 'uppercase',
     textAlign: 'left',
-    lineHeight: 'normal',
-    letterSpacing: '.25em',
+    //lineHeight: 'normal',
+    //letterSpacing: '.25em',
     fontSize: '2em',
     fontWeight: 200,
     color: 'white',
-    backgroundColor: '#e8aeb3',
+    //backgroundColor: '#e8aeb3',
     padding: 30,
 }
 
@@ -129,7 +129,7 @@ export default class extends React.Component {
 
                 <Grid data={data} component={GridItem} onItemClicked={this.onItemClicked} />
 
-                <Footer title={'Infos und\nKontaktdaten'}>
+                <Footer day="+" title={'Infos und\nKontaktdaten'}>
                     <p>Für weitere Informationen oder Fragen</p>
                     <p>könnt ihr uns hier erreichen:</p>
                     <br />

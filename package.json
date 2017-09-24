@@ -19,6 +19,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-lite": "^0.15.38",
+    "react-media": "^1.6.1",
     "react-motion": "^0.5.1",
     "react-scroll": "^1.5.4"
   },
