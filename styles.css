@@ -12,17 +12,17 @@ body {
 
 @font-face {
     font-family: 'Gotham-Medium';
-    src: url('/assets/fonts/Gotham-Medium.eot');
-    src: local('☺'), url('/assets/fonts/Gotham-Medium.woff2') format('woff2'),
-        url('/assets/fonts/Gotham-Medium.woff') format('woff'),
-        url('/assets/fonts/Gotham-Medium.ttf') format('truetype');
+    src: url(./assets/fonts/Gotham-Medium.eot);
+    src: local('☺'), url(./assets/fonts/Gotham-Medium.woff2) format('woff2'),
+        url(./assets/fonts/Gotham-Medium.woff) format('woff'),
+        url(./assets/fonts/Gotham-Medium.ttf) format('truetype');
 }
 
 @font-face {
     font-family: 'Exchange SSm 4r';
-    src: url('/assets/fonts/Exchange.eot');
-    src: local('☺'), url('/assets/fonts/Exchange.woff2') format('woff2'),
-        url('/assets/fonts/Exchange.woff') format('woff'), url('/assets/fonts/Exchange.ttf') format('truetype');
+    src: url(./assets/fonts/Exchange.eot);
+    src: local('☺'), url(./assets/fonts/Exchange.woff2) format('woff2'),
+        url(./assets/fonts/Exchange.woff) format('woff'), url(./assets/fonts/Exchange.ttf) format('truetype');
 }
 
 .grid {
@@ -71,7 +71,7 @@ body {
         transition: background-color 0.2s;
         &:hover {
             background-color: var(--colorAccent);
-            background-image: url(/assets/plus.png);
+            background-image: url(./assets/plus.png);
             background-position: center;
             background-size: 4em;
             background-repeat: no-repeat;
@@ -273,6 +273,7 @@ body {
         font-weight: 600;
         text-transform: uppercase;
         text-align: center;
+        word-break: break-word;
         line-height: 1;
         font-size: 4em;
         margin-top: 0;
@@ -347,7 +348,7 @@ body {
     background-color: #292929;
     background-size: cover;
     background-position: top;
-    background-image: url(/assets/stars2.jpg);
+    background-image: url(./assets/stars2.jpg);
 
     color: white;
     & > div {

@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const postcss = require('postcss-cssnext')
 const WebpackNotifierPlugin = require('webpack-notifier')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const imageCompression = {
     bypassOnDebug: true,
@@ -25,7 +26,19 @@ module.exports = env => ({
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [['env', { modules: false, loose: true }], 'stage-0', 'react'],
+                        babelrc: false,
+                        cacheDirectory: true,
+                        presets: [
+                            ['@babel/preset-env', { modules: false, loose: true, useBuiltIns: 'usage' }],
+                            '@babel/preset-stage-0',
+                            '@babel/preset-react',
+                        ],
+                        plugins: [
+                            [
+                                '@babel/transform-runtime',
+                                { helpers: true, polyfill: false, regenerator: true, moduleName: '@babel/runtime' },
+                            ]
+                        ],
                     },
                 },
             },
@@ -54,8 +67,8 @@ module.exports = env => ({
     },
     resolve: {
         alias: env.prod && {
-            react: 'preact-compat',
-            'react-dom': 'preact-compat',
+            react: 'nervjs',
+            'react-dom': 'nervjs',
         },
     },
     plugins: [
@@ -64,7 +77,8 @@ module.exports = env => ({
             new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } }),
             new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
             new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }, mangle: true }),
-        ]) ||
-            []),
+            new BundleAnalyzerPlugin({ analyzerMode: 'static', defaultSizes: 'gzip' }),
+        ]) || []),
     ],
+    mode: env.prod ? 'production' : 'dev',
 })

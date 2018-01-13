@@ -1,6 +1,7 @@
 import React from 'react'
+import { hot } from 'react-hot-loader'
 import data from '../store'
-import { Content, Lightbox, Grid, GridItem, Nav, NavLink, Header, Section, Figure, Quote, Footer } from '../components'
+import { Content, Lightbox, Grid, GridItem, Nav, NavLink, Header, Section, Figure, Quote, Footer } from './index'
 
 const header = {
     backgroundSize: 'cover',
@@ -12,12 +13,9 @@ const title = {
     fontFamily: '"Gotham-Medium", sans-serif',
     textTransform: 'uppercase',
     textAlign: 'left',
-    //lineHeight: 'normal',
-    //letterSpacing: '.25em',
     fontSize: '2em',
     fontWeight: 200,
     color: 'white',
-    //backgroundColor: '#e8aeb3',
     padding: 30,
 }
 
@@ -27,7 +25,7 @@ const link = {
     verticalAlign: 'middle',
 }
 
-export default class extends React.Component {
+class App extends React.Component {
     state = { item: undefined }
     onItemClicked = item => this.setState({ item })
     render() {
@@ -142,7 +140,7 @@ export default class extends React.Component {
                     <p>
                         Freiburg: <a href="mailto:gnosissur@gmail.com">gnosissur@gmail.com</a>&nbsp;
                         <a href="http://www.facebook.com/gnosissur">
-                            <img style={link} src="../assets/fb.png" />
+                            <img style={link} src={require('../assets/fb.png')} />
                         </a>
                     </p>
                     <p>
@@ -159,3 +157,5 @@ export default class extends React.Component {
         )
     }
 }
+
+export default hot(module)(App)
