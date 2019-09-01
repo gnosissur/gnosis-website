@@ -278,7 +278,6 @@ body {
         font-size: 4em;
         margin-top: 0;
         margin-bottom: 0.5em;
-        color: var(--colorAccent);
     }
     & span {
         text-align: center;

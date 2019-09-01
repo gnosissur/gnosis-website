@@ -10,7 +10,6 @@ const options = {
     cacheDirectory: true,
     presets: [
         ['@babel/preset-env', { modules: false, loose: true, targets: { chrome: 60 } }],
-        '@babel/preset-stage-0',
         '@babel/preset-react',
     ],
     plugins: [

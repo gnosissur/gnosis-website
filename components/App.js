@@ -43,9 +43,9 @@ class App extends React.Component {
 
                 <Header style={header}>
                     <h1 style={title}>
-                        GNOSISTISCHE<br />
-                        KULTUR IN<br />
-                        DEUTSCHLAND
+                        GNOSISTISCHE KULTUR<br />
+                        IN DEUTSCHLAND<br />
+                        UND DER SCHWEIZ<br />
                     </h1>
                     <img
                         style={{ position: 'absolute', left: '1.5em', bottom: '1.5em', height: 20 }}
@@ -74,8 +74,7 @@ class App extends React.Component {
                 </Section>
 
                 <Figure position="center" url={require('../assets/saw_plane.jpg')} style={{ minHeight: '60vh' }}>
-                    Samael Aun Weor, Begründer der gnostischen Bewegung, widmette sein Leben dem Dienst und der Hilfe
-                    anderer, jedem und überall.
+                    Samael Aun Weor, Begründer der gnostischen Bewegung, widmette sein Leben dem Dienst und der Hilfe, jedem und überall.
                 </Figure>
 
                 <Section title="Über uns" anchor="about">
@@ -144,13 +143,22 @@ class App extends React.Component {
                         </a>
                     </p>
                     <p>
-                        Wuppertal: <a href="mailto:gnosisNRW@gmail.com">gnosisNRW@gmail.com</a>&nbsp;
+                        Nordrhein-Westfalen (Köln, Düsseldorf, Wuppertal und Essen): <a href="mailto:gnosisNRW@gmail.com">gnosisNRW@gmail.com</a>
                         <a href="http://www.facebook.com/gnosisNRW">
                             <img style={link} src={require('../assets/fb.png')} />
                         </a>
                     </p>
                     <p>
-                        Leipzig: <a href="mailto:gnosisleipzig@gmail.com">gnosisleipzig@gmail.com</a>
+                        Schweiz, Basel: <a href="mailto:gnosisbasel@gmail.com">gnosisbasel@gmail.com</a>
+                        <a href="https://www.facebook.com/gnosisbasel">
+                            <img style={link} src={require('../assets/fb.png')} />
+                        </a>
+                    </p>
+                    <p>
+                        Schweiz, Winterthur, St. Gallen: <a href="mailto:gnosissur@gmail.com">gnosissur@gmail.com</a>
+                        <a href="https://www.facebook.com/gnosissur">
+                            <img style={link} src={require('../assets/fb.png')} />
+                        </a>
                     </p>
                 </Footer>
             </Content>
