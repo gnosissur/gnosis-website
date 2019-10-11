@@ -15,7 +15,7 @@ const options = {
     plugins: [
         'react-hot-loader/babel',
         // The following three only due to react-hot-loader having trouble with real classes
-        '@babel/plugin-proposal-decorators',
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
         '@babel/plugin-proposal-class-properties',
         ['@babel/plugin-transform-classes', { loose: true }],
     ],
