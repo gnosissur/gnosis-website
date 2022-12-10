@@ -39,7 +39,7 @@
     "cross-env": "^5.2.1",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "file-loader": "^4.2.0",
     "font-loader": "^0.1.2",
     "html-webpack-plugin": "git://github.com/Graham42/html-webpack-plugin.git#feat/webpack-4",
